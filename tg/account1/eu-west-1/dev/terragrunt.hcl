@@ -39,7 +39,7 @@ locals {
       encrypt             = true
       dynamodb_table      = "${local.resource_prefix}-tf-locks"
       dynamodb_table_tags = local.common_tags
-      role_arn            = "arn:aws:iam::063440148893:role/tf_admin_access"
+      role_arn            = local.input_var_map.acess_role
     }
   }
 }
