@@ -1,33 +1,39 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.163.1/containers/ubuntu
 {
-	"name": "Ubuntu",
-	"build": {
-		"dockerfile": "Dockerfile",
-		// Update 'VARIANT' to pick an Ubuntu version: focal, bionic
-		"args": { 
-			"VARIANT": "focal",
-			"TF_VERSION": "0.14.8",
-			"TG_VERSION":"v0.28.24"
-		}
-	},
+    "name": "Ubuntu",
+    "build": {
+        "dockerfile": "Dockerfile",
+        // Update 'VARIANT' to pick an Ubuntu version: focal, bionic
+        "args": { 
+            "VARIANT": "focal",
+            "TF_VERSION": "0.14.8",
+            "TG_VERSION":"v0.28.24"
+        }
+    },
 
-	// Set *default* container specific settings.json values on container create.
-	"settings": { 
-		"terminal.integrated.shell.linux": "/bin/bash"
-	},
+    // Set *default* container specific settings.json values on container create.
+    "settings": { 
+        "terminal.integrated.shell.linux": "/bin/bash",
+        "[tf]": {
+            "editor.tabSize": 2
+        },
+        "[hcl]": {
+            "editor.tabSize": 2
+        }
+    },
 
-	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": ["hashicorp.terraform", "atishay-jain.all-autocomplete"],
-	"mounts": [
-		"source=${localEnv:HOME}/.aws,target=/root/.aws/,type=bind,consistency=cached"
-	]
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+    // Add the IDs of extensions you want installed when the container is created.
+    "extensions": ["hashicorp.terraform", "atishay-jain.all-autocomplete"],
+    "mounts": [
+        "source=${localEnv:HOME}/.aws,target=/root/.aws/,type=bind,consistency=cached"
+    ]
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    // "forwardPorts": [],
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "uname -a",
+    // Use 'postCreateCommand' to run commands after the container is created.
+    // "postCreateCommand": "uname -a",
 
-	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	// "remoteUser": "vscode"
+    // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+    // "remoteUser": "vscode"
 }
