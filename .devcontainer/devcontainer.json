@@ -20,6 +20,9 @@
         },
         "[hcl]": {
             "editor.tabSize": 2
+        },
+        "files.associations": {
+            "*.hcl": "terraform"
         }
     },
 
