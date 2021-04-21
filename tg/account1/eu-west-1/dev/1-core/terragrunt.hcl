@@ -6,7 +6,7 @@ include {
   path = find_in_parent_folders()
 }
 
-locals{
+locals {
   input_var_map = merge(
     yamldecode(
       file(find_in_parent_folders("account_vars.yaml"))
@@ -23,7 +23,7 @@ locals{
   )
 
   common_tags = {
-    "env" = local.input_var_map.env
+    "env"     = local.input_var_map.env
     "project" = local.input_var_map.project_name
     "service" = local.input_var_map.service_name
   }
@@ -34,6 +34,7 @@ dependencies {
 }
 
 inputs = {
-  aws_region = local.input_var_map.aws_region
-  tags = local.common_tags
+  aws_region        = local.input_var_map.aws_region
+  aws_provider_role = local.input_var_map.acess_role
+  tags              = local.common_tags
 }

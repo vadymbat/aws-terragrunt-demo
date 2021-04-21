@@ -49,6 +49,7 @@ dependency "core" {
 
 inputs = {
   aws_region                = local.input_var_map.aws_region
+  aws_provider_role         = local.input_var_map.acess_role
   lambda_artifact_s3_bucket = dependency.core.outputs.artifacts_s3_bucket.bucket
   tags                      = local.common_tags
   resource_prefix           = local.resource_prefix
