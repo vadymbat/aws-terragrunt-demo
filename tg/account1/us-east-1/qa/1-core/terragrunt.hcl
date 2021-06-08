@@ -29,10 +29,6 @@ locals {
   }
 }
 
-dependencies {
-  paths = ["../core"]
-}
-
 inputs = {
   aws_region        = local.input_var_map.aws_region
   aws_provider_role = local.input_var_map.acess_role
